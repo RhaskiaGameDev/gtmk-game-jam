@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -31,5 +33,10 @@ public class Enemy : MonoBehaviour
         velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
         rb.velocity = velocity;
+    }
+
+    void OnMouseOver()
+    {
+        SwitchManager.Instance.currentEnemy = this;
     }
 }
