@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public float accel;
     public float maxSpeed;
     private SpriteRenderer meshRenderer;
+    public float jumps;
+    private float jumpsLeft;
     
     // Start is called before the first frame update
     void Start()
@@ -22,13 +24,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meshRenderer.material.SetFloat("_OutlineThickness", SwitchManager.Instance.currentEnemy == this ? 1 : 0);
+        //meshRenderer.material.SetFloat("_OutlineThickness", SwitchManager.Instance.currentEnemy == this ? 1 : 0);
         
         if (SwitchManager.Instance.currentEnemy != this) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsLeft > 0)
         {
             rb.AddForce(Vector2.up * jumpForce);
+            jumpsLeft--;
         }
 
         Vector2 velocity = rb.velocity;
@@ -42,5 +45,14 @@ public class Enemy : MonoBehaviour
     void OnMouseOver()
     {
         SwitchManager.Instance.currentEnemy = this;
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            print("whuh");
+            jumpsLeft = jumps;
+        }
     }
 }
