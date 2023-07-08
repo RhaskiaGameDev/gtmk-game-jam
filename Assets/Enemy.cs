@@ -27,8 +27,7 @@ public class Enemy : MonoBehaviour
         //meshRenderer.material.SetFloat("_OutlineThickness", SwitchManager.Instance.currentEnemy == this ? 1 : 0);
         
         if (SwitchManager.Instance.currentEnemy != this) return;
-
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsLeft > 0)
+        if ((Input.GetKeyDown(KeyCode.Space)||(Input.GetKeyDown(KeyCode.W)||(Input.GetKeyDown(KeyCode.UpArrow))) && jumpsLeft > 0))
         {
             rb.AddForce(Vector2.up * jumpForce);
             jumpsLeft--;
@@ -42,7 +41,7 @@ public class Enemy : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    void OnMouseOver()
+    void OnMouseDown()
     {
         SwitchManager.Instance.currentEnemy = this;
     }
@@ -51,7 +50,6 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            print("whuh");
             jumpsLeft = jumps;
         }
     }
