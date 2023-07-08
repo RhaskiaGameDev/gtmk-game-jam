@@ -10,16 +10,20 @@ public class Enemy : MonoBehaviour
     public float jumpForce;
     public float accel;
     public float maxSpeed;
-
+    private SpriteRenderer meshRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        meshRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        meshRenderer.material.SetFloat("_OutlineThickness", SwitchManager.Instance.currentEnemy == this ? 1 : 0);
+        
         if (SwitchManager.Instance.currentEnemy != this) return;
 
         if (Input.GetKeyDown(KeyCode.Space))
