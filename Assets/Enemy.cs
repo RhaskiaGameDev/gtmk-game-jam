@@ -24,10 +24,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //meshRenderer.material.SetFloat("_OutlineThickness", SwitchManager.Instance.currentEnemy == this ? 1 : 0);
+        meshRenderer.color = SwitchManager.Instance.currentEnemy == this ? new Color(2f, 2f, 2f, 1f) : new Color(1f, 1f, 1f,  .6f);
         
         if (SwitchManager.Instance.currentEnemy != this) return;
-        if ((Input.GetKeyDown(KeyCode.Space)||(Input.GetKeyDown(KeyCode.W)||(Input.GetKeyDown(KeyCode.UpArrow))) && jumpsLeft > 0))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && jumpsLeft > 0)
         {
             rb.AddForce(Vector2.up * jumpForce);
             jumpsLeft--;
