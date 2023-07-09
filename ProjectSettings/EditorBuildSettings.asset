@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tilemap.unity
     guid: fba0cac330a2c0647ae0ad2a1ef8bc98
+  - enabled: 1
+    path: Assets/Scenes/scene 2.unity
+    guid: 6ba2f04d01fe58844aa6e24ee21f7881
+  - enabled: 1
+    path: Assets/Scenes/scene3.unity
+    guid: 067061bc23ac53748a448fb64ae129e8
   m_configObjects: {}
