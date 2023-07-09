@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Ground
+  - Switch
+  - Jump
   layers:
   - Default
   - TransparentFX

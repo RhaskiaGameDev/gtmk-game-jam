@@ -22,7 +22,28 @@ public class AIPlayer : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
 
-        velocity.x = speed * (direction ? 1 : 0);
+        velocity.x = speed * (direction ? 1 : -1);
         rb.velocity = velocity;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Switch"))
+        {
+            direction = !direction;
+            
+            var next = other.gameObject.GetComponent<PlayerTrigger>().nextTrigger;
+            
+            if (next != null) next.SetActive(true);
+        }
+        
+        if (other.gameObject.CompareTag("Jump"))
+        {
+            rb.AddForce(Vector2.up * jumpForce);
+
+            var next = other.gameObject.GetComponent<PlayerTrigger>().nextTrigger;
+            
+            if (next != null) next.SetActive(true);
+        }
     }
 }
