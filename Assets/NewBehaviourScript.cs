@@ -10,6 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI MyText;
+   
     void Start()
     {
         
