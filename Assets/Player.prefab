@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShooting: 0
+  dead: 0
   idle:
   - {fileID: 974871183, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
   - {fileID: -1938303217, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
@@ -153,6 +154,7 @@ MonoBehaviour:
   - {fileID: -2102592035, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
   - {fileID: -1482971091, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
   - {fileID: -460199001, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  death: []
   delay: 0.08333334
   frame: 0
 --- !u!114 &1821151555712050387
@@ -172,6 +174,7 @@ MonoBehaviour:
   speed: 2
   direction: 1
   shootDelay: 0.2
+  er: {fileID: 7332975300298985266}
   health: 20
 --- !u!70 &5174741843918345524
 CapsuleCollider2D:

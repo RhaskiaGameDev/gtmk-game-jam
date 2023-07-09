@@ -20,14 +20,15 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
     
-   var Array = GameObject.FindGameObjectsWithTag("Enemy");// set the array to hold all GameObjects with the specified tag
+    var Array = GameObject.FindGameObjectsWithTag("Enemy");// set the array to hold all GameObjects with the specified tag
 
-// check if there are any GameObjects (with the specified tag) spawned
+    // check if there are any GameObjects (with the specified tag) spawned
     if ( Array.Length == 0 )
-{
-    MyText.text = "zamn!";
-}
-}
+    {
+        MyText.text = "zamn!";
+    }
+    
+    }
 }
 
 
