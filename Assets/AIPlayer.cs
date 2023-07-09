@@ -35,6 +35,7 @@ public class AIPlayer : MonoBehaviour
             var next = other.gameObject.GetComponent<PlayerTrigger>().nextTrigger;
             
             if (next != null) next.SetActive(true);
+            print("sqwitc");
         }
         
         if (other.gameObject.CompareTag("Jump"))
@@ -44,6 +45,7 @@ public class AIPlayer : MonoBehaviour
             var next = other.gameObject.GetComponent<PlayerTrigger>().nextTrigger;
             
             if (next != null) next.SetActive(true);
+            print("what");
         }
     }
 }
