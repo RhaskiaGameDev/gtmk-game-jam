@@ -9,7 +9,8 @@ public class AIPlayer : MonoBehaviour
     public float speed;
     public bool direction;
     private SpriteRenderer meshRenderer;
-    
+
+    public float health; 
     // Start is called before the first frame update
     void Start()
     {

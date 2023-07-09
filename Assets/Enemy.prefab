@@ -101,9 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  SR: {fileID: 8820164615705632041}
   jumpForce: 200
   speed: 5
   jumps: 2
+  direction: 0
+  health: 0
 --- !u!50 &2175408054487749913
 Rigidbody2D:
   serializedVersion: 4
