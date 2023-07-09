@@ -42,8 +42,8 @@ public class Enemy : MonoBehaviour
         if (Input.GetMouseButtonDown(0));
         {
             Vector2 dir = SR.flipX ? Vector2.right : Vector2.left; 
-            Ray2D ray = new Ray2D(transform.position + dir/2, dir);
-            RaycastHit2D hit = Physics2D.Raycast(ray);
+            Ray2D ray = new Ray2D((Vector2)transform.position + dir/2, dir);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             Debug.DrawRay(ray.origin, ray.direction, Color.red, 10.0f);
 
             // If it hits something...
