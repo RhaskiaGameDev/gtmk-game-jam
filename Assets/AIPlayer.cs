@@ -6,8 +6,8 @@ public class AIPlayer : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float jumpForce;
-    public float accel;
-    public float maxSpeed;
+    public float speed;
+    public bool direction;
     private SpriteRenderer meshRenderer;
     
     // Start is called before the first frame update
@@ -22,6 +22,7 @@ public class AIPlayer : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
 
-        rb.velocity = transform.right;
+        velocity.x = speed * (direction ? 1 : 0);
+        rb.velocity = velocity;
     }
 }
