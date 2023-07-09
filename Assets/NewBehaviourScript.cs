@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TextMeshProUGUI MyText;
+    public TextMeshProUGUI won;
+    public TextMeshProUGUI lost;
     void Start()
     {
         
@@ -24,7 +25,14 @@ public class NewBehaviourScript : MonoBehaviour
     // check if there are any GameObjects (with the specified tag) spawned
     if ( Array.Length == 0 )
     {
-        MyText.text = "zamn!";
+        lost.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+    
+    if ( FindObjectOfType<AIPlayer>().health < 1 )
+    {
+        won.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
     
     }
