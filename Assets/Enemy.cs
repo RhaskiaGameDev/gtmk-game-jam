@@ -14,22 +14,40 @@ public class Enemy : MonoBehaviour
     public float jumps;
     private float jumpsLeft;
     public bool direction;
-    public float health; 
+    public float health;
+
+    public float shootDelay;
+    private float lastShot;
+
+    private EnemyRenderer er;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         meshRenderer = GetComponent<SpriteRenderer>();
+        er = GetComponent<EnemyRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        
         bool current = SwitchManager.Instance.currentEnemy.Contains(this);
         
         meshRenderer.color = current ? new Color(2f, 2f, 2f, 1f) : new Color(1f, 1f, 1f,  .6f);
+
+        er.isShooting = false;
+
+        if (health < 1)
+        {
+            er.dead = true;
+            SwitchManager.Instance.currentEnemy.Remove(this);
+            er.delay = 1f / 6f;
+            Destroy(gameObject, .5f);
+        }
         
-        if (!current) return;
+        if (!current || health < 0) return;
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && jumpsLeft > 0)
         {
             rb.AddForce(Vector2.up * jumpForce);
@@ -39,9 +57,14 @@ public class Enemy : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = speed * Input.GetAxis("Horizontal");
         rb.velocity = velocity;
-        if (Input.GetMouseButtonDown(0));
+
+        er.isShooting = Input.GetMouseButton(0);
+        
+        if (Input.GetMouseButton(0) && Time.time - lastShot > shootDelay)
         {
-            Vector2 dir = SR.flipX ? Vector2.right : Vector2.left; 
+            lastShot = Time.time;
+            
+            Vector2 dir = SR.flipX ? Vector2.left : Vector2.right; 
             Ray2D ray = new Ray2D((Vector2)transform.position + dir/2, dir);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             Debug.DrawRay(ray.origin, ray.direction, Color.red, 10.0f);

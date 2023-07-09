@@ -106,7 +106,8 @@ MonoBehaviour:
   speed: 5
   jumps: 2
   direction: 0
-  health: 0
+  health: 4
+  shootDelay: 0.5
 --- !u!50 &2175408054487749913
 Rigidbody2D:
   serializedVersion: 4
@@ -147,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShooting: 0
+  dead: 0
   idle:
   - {fileID: -1076534668, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
   - {fileID: -1269410873, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
@@ -163,6 +165,11 @@ MonoBehaviour:
   shoot:
   - {fileID: -1973698085, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
   - {fileID: -789564607, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
+  death:
+  - {fileID: 259585323, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
+  - {fileID: 1624552866, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
+  - {fileID: -2144895160, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
+  - {fileID: -2078440481, guid: ac81aa9310d7a104699d41efebf851a7, type: 3}
   delay: 0.08333334
   frame: 0
 --- !u!70 &5499549630352528985

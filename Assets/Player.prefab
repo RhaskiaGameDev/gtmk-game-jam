@@ -139,7 +139,20 @@ MonoBehaviour:
   - {fileID: 1279873972, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
   - {fileID: -972479224, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
   - {fileID: 1819017861, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
-  shoot: []
+  - {fileID: -982878930, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -1234566673, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -82029750, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -1197688447, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -1949972995, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  shoot:
+  - {fileID: -104850412, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: 711758638, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -200824898, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -72890078, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -643006228, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -2102592035, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -1482971091, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
+  - {fileID: -460199001, guid: 1044554558f8c654e977a44cb6a3db0f, type: 3}
   delay: 0.08333334
   frame: 0
 --- !u!114 &1821151555712050387
@@ -158,6 +171,8 @@ MonoBehaviour:
   jumpForce: 100
   speed: 2
   direction: 1
+  shootDelay: 0.2
+  health: 20
 --- !u!70 &5174741843918345524
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
