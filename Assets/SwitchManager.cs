@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchManager : MonoBehaviour
 {
     public static SwitchManager Instance;
-    public Enemy currentEnemy;
+    public List<Enemy> currentEnemy = new List<Enemy>();
 
     // Start is called before the first frame update
     void Start()

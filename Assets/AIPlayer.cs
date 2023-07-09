@@ -23,6 +23,5 @@ public class AIPlayer : MonoBehaviour
         Vector2 velocity = rb.velocity;
 
         rb.velocity = transform.right;
-        //rb.velocity = velocity; 
     }
 }
